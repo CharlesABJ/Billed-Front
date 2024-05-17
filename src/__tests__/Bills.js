@@ -12,12 +12,15 @@ import store from "../__mocks__/store.js";
 import Bills from "../containers/Bills.js";
 
 import router from "../app/Router.js";
+
 function onNavigate() {}
 
 describe("Given I am connected as an employee", () => {
   describe("When I am on Bills Page", () => {
+    // Ajout de la méthode beforeEach pourpour définir les conditions initiales avant chaque test. Cela permet d'éviter de répéter ces étapes dans chaque test individuel.
     beforeEach(() => {
       document.body.innerHTML = BillsUI({ data: bills });
+      // On définit une nouvelle propriété 'localStorage' sur l'objet 'window' avec une valeur mock  pour simuler le comportement du localStorage du navigateur pendant les tests.
       Object.defineProperty(window, "localStorage", {
         value: localStorageMock,
       });
