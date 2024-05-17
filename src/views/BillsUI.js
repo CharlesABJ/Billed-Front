@@ -20,6 +20,7 @@ const row = (bill) => {
 };
 
 const rows = (data) => {
+  // Ajout de la fonction antiChrono afin de trier les notes de frais par date de manière décroissante
   const antiChrono = (a, b) => (new Date(a.date) < new Date(b.date) ? 1 : -1);
 
   return data && data.length
